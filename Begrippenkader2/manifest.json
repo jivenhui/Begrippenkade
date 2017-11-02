@@ -1,0 +1,22 @@
+{
+    "manifest":[
+        {
+            "id":"1",
+            "name":"PSO",
+            "version":"1",
+            "description":"Peace Support Operations woordenboek",
+            "publisher":"CDC/NLDA/TCD",
+            "location":"/language-set",
+            "file_name":"pso.json"
+        },
+        {
+            "id":"1",
+            "name":"Duits voor grensbewakers",
+            "version":"2",
+            "description":"Duits voor grensbewakers",
+            "publisher":"Politie",
+            "location":"/language-set",
+            "file_name":"dvgb.json"
+        }
+    ]
+}

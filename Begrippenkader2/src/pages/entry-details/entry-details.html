@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{entry.base_lang}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let entry of entries" (press)="addToList(entry.base_lang, entry.translation)">
+      <!--{{entry.group_id}} {{entry.sub_id}} -->
+      <h2>{{entry.base_lang}}</h2>
+      <p>{{entry.translation}}</p>
+    </button>
+  </ion-list>
+</ion-content>

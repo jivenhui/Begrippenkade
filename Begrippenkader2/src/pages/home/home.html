@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle="left">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{selectedDataset}}</ion-title>
+    <ion-buttons end>
+      <button ion-button menuToggle="right">
+        <ion-icon name="md-more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<!-- (ionInput)="onInput($event)" (ionCancel)="onCancel($event)" -->
+
+<ion-content>
+  <ion-searchbar [(ngModel)]="search" [showCancelButton]="false" (ionInput)="onSearchInput($event)" (ionCancel)="onSearchCancel($event)">
+  </ion-searchbar>
+  <ion-list [virtualScroll]="selectionOfEntries" [approxItemHeight]="'150px'">
+    <button ion-item *virtualItem="let entry" (click)="goToEntryDetailsPage($event, entry)">
+      <!--{{entry.group_id}} {{entry.sub_id}} -->
+      <h2>{{entry.base_lang}}</h2>
+      <p>{{entry.translation}}</p>
+    </button>
+  </ion-list>
+</ion-content>

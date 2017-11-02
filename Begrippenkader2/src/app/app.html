@@ -1,0 +1,37 @@
+<ion-menu side="left" [content]="content">
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>PSO</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button ion-item *ngFor="let p of MainMenu" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-menu side="right" [content]="content">
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>PSO</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button ion-item *ngFor=  "let p of OtherMenu" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

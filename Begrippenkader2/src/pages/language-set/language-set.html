@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Taalsets</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addDataset($event)">
+        <ion-icon name="download"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list [virtualScroll]="availableDatasets" [approxItemHeight]="'150px'">
+    <button ion-item *virtualItem="let dataset" (click)="goToDatasetDetailsPage($event, dataset)">
+      <h2>{{dataset.name}}</h2>
+      <p>{{dataset.publisher}}</p>
+
+      <ion-icon *ngIf="'dict_' + dataset.name + '_v' + dataset.version == selectedDataset" name="checkmark" color="favorite" item-right></ion-icon>
+    </button>
+  </ion-list>
+</ion-content>

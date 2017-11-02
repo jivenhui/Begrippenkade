@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Over deze app
+    </ion-title>
+  </ion-navbar>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="selectedPage" color="marine">
+      <ion-segment-button value="copyright">
+        Copyright
+      </ion-segment-button>
+      <ion-segment-button value="terms">
+        Algemene voorwaarden
+      </ion-segment-button>
+      <ion-segment-button value="disclaimer">
+        Disclaimer
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [ngSwitch]="selectedPage" class="background" padding>
+  <div *ngSwitchCase="'copyright'">
+    <h1>Copyright</h1>
+    <p>Tenzij anders vermeld is op de inhoud van deze mobiele applicatie de verklaring 'Creative Commons zero' (CC0) van toepassing. Dat houdt in dat iedere vorm van hergebruik van de inhoud van deze applicatie is toegestaan, tenzij bij of in een bepaald onderdeel (bijvoorbeeld een foto of een document) staat aangegeven dat op dat onderdeel een auteursrechtelijke uitzondering van toepassing is.</p>
+    <p>Bij hergebruik van de inhoud van deze mobiele applicatie is naamsvermelding verplicht. Bij gebruik van beeldmateriaal (foto en video) de naam 'Ministerie van Defensie' als bron vermelden. Voorts mag bij het citeren van de inhoud niet de indruk worden gewekt dat het ministerie van Defensie zonder meer de strekking van het afgeleide werk onderschrijft.</p>
+    <p>De volgende rechten worden door de CC0-verklaring niet gewijzigd en blijven dus van kracht:</p>
+    <ul>
+      <li>octrooirechten en merkrechten;</li>
+      <li>rechten van anderen, ofwel op onderdelen van deze website, dan wel op de wijze waarop de website wordt gebruikt, zoals het portretrecht of privacyrecht</li>
+    </ul>
+  </div>
+  <div *ngSwitchCase="'terms'">
+    <h1>Voorwaarden</h1>
+      <p>Het ministerie van Defensie aanvaardt geen enkele aansprakelijkheid voor directe of indirecte schade, van welke aard dan ook, voortvloeiende uit het gebruik van deze applicatie en/of de aangeboden content. </p>
+      <p>Het ministerie van Defensie aanvaardt geen verantwoordelijkheid voor de inhoud van websites en mobiele applicaties waarnaar of waarvan met een hyperlink of anderszins wordt verwezen. </p>
+      <p>Het is de gebruiker niet toegestaan de mobiele applicatie te wijzigen, kopiëren, beschadigen, overbelasten, hinderen, uit te schakelen of het gebruik en functioneren van de mobiele applicatie te belemmeren. Commercieel gebruik van gegevens, afkomstig van en/of vertoond in de mobiele applicatie, is niet toegestaan, tenzij hiervoor voorafgaande toestemming is verkregen van het ministerie van Defensie. </p>
+      <p>In gevallen die niet voorzien zijn in de gebruiksvoorwaarden of relevante FAQ's beslist het ministerie van Defensie.</p>
+  </div>
+  <div *ngSwitchCase="'disclaimer'">
+    <h1>Disclaimer</h1>
+      <p>Deze applicatie wordt u gratis aangeboden en aan het gebruik zijn geen abonnementskosten verbonden. Het kan zijn dat uw mobiele operator kosten rekent voor het dataverkeer dat deze applicatie gebruikt.</p>
+      <p>Deze applicatie slaat geen persoonlijke informatie op.</p>
+      <p>Het ministerie van Defensie stelt de mobiele applicatie met de grootst mogelijke zorg beschikbaar ten behoeve van gebruikers, maar garandeert niet dat deze vrij zal zijn van virussen, noch dat de mobiele applicatie te allen tijde beschikbaar is en foutloos zal werken. Ondanks de constante zorg en aandacht die aan de samenstelling van deze applicatie wordt besteed, is het mogelijk dat informatie die hier wordt gepubliceerd onvolledig of onjuist is. Het ministerie van Defensie behoudt zich het recht voor om de inhoud van deze mobiele applicatie en de tekst van deze pagina op elk gewenst moment naar eigen inzicht te wijzigen.</p>
+      <p>Deze App is ontwikkeld door het TCD van de Nederlandse Defensie Academie.</p>
+  </div>
+
+  <!-- <ion-slides #mySlider [options]="mySlideOptions">
+    <ion-slide>
+      <h1>Copyright</h1>
+      <p>Tenzij anders vermeld is op de inhoud van deze mobiele applicatie de verklaring 'Creative Commons zero' (CC0) van toepassing. Dat houdt in dat iedere vorm van hergebruik van de inhoud van deze applicatie is toegestaan, tenzij bij of in een bepaald onderdeel (bijvoorbeeld een foto of een document) staat aangegeven dat op dat onderdeel een auteursrechtelijke uitzondering van toepassing is.</p>
+      <p>Bij hergebruik van de inhoud van deze mobiele applicatie is naamsvermelding verplicht. Bij gebruik van beeldmateriaal (foto en video) de naam 'Ministerie van Defensie' als bron vermelden. Voorts mag bij het citeren van de inhoud niet de indruk worden gewekt dat het ministerie van Defensie zonder meer de strekking van het afgeleide werk onderschrijft.</p>
+      <p>De volgende rechten worden door de CC0-verklaring niet gewijzigd en blijven dus van kracht:</p>
+      <ul>
+        <li>octrooirechten en merkrechten;</li>
+        <li>rechten van anderen, ofwel op onderdelen van deze website, dan wel op de wijze waarop de website wordt gebruikt, zoals het portretrecht of privacyrecht</li>
+      </ul>
+    </ion-slide>
+    <ion-slide>
+      <h1>Algemene voorwaarden</h1>
+      <p>Het ministerie van Defensie aanvaardt geen enkele aansprakelijkheid voor directe of indirecte schade, van welke aard dan ook, voortvloeiende uit het gebruik van deze applicatie en/of de aangeboden content. </p>
+      <p>Het ministerie van Defensie aanvaardt geen verantwoordelijkheid voor de inhoud van websites en mobiele applicaties waarnaar of waarvan met een hyperlink of anderszins wordt verwezen. </p>
+      <p>Het is de gebruiker niet toegestaan de mobiele applicatie te wijzigen, kopiëren, beschadigen, overbelasten, hinderen, uit te schakelen of het gebruik en functioneren van de mobiele applicatie te belemmeren. Commercieel gebruik van gegevens, afkomstig van en/of vertoond in de mobiele applicatie, is niet toegestaan, tenzij hiervoor voorafgaande toestemming is verkregen van het ministerie van Defensie. </p>
+      <p>In gevallen die niet voorzien zijn in de gebruiksvoorwaarden of relevante FAQ's beslist het ministerie van Defensie.</p>
+      <p>Deze applicatie maakt gebruik van de Google Places API. De <a href="https://www.google.com/intl/nl/policies/terms/">Servicevoorwaarden</a> en het <a href="https://www.google.com/policies/privacy/">Privacybeleid</a> van Google zijn daarom aanvullend van toepassing op deze applicatie.</p>
+    </ion-slide>
+    <ion-slide>
+      <h1>Disclaimer</h1>
+      <p>Deze applicatie wordt u gratis aangeboden en aan het gebruik zijn geen abonnementskosten verbonden. Het kan zijn dat uw mobiele operator kosten rekent voor het dataverkeer dat deze applicatie gebruikt.</p>
+      <p>Deze applicatie slaat geen persoonlijke informatie op.</p>
+      <p>Het ministerie van Defensie stelt de mobiele applicatie met de grootst mogelijke zorg beschikbaar ten behoeve van gebruikers, maar garandeert niet dat deze vrij zal zijn van virussen, noch dat de mobiele applicatie te allen tijde beschikbaar is en foutloos zal werken. Ondanks de constante zorg en aandacht die aan de samenstelling van deze applicatie wordt besteed, is het mogelijk dat informatie die hier wordt gepubliceerd onvolledig of onjuist is. Het ministerie van Defensie behoudt zich het recht voor om de inhoud van deze mobiele applicatie en de tekst van deze pagina op elk gewenst moment naar eigen inzicht te wijzigen.</p>
+      <p>Deze App is ontwikkeld door het KIXS van de Joint IV Commando.</p>
+      <p><strong>App versie 1.0 - 2016, &copy; Copyright Ministerie van Defensie, alle rechten voorbehouden.</strong></p>
+    </ion-slide>
+  </ion-slides> -->
+</ion-content>

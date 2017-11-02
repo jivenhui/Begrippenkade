@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Instellingen
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="background">
+  <ion-list>
+    <ion-card>
+      <ion-card-header class="settingTitle">Algemeen</ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label color="orange" stacked>Taal weergave</ion-label>
+          <ion-select (ionChange)="saveSettings()" okText="Bevestig" cancelText="Annuleer"
+                      [(ngModel)]="settings.app_language">
+            <ion-option *ngFor="let language of languages" value="{{language.LanguageCode}}">
+              {{language.LanguageCode }}
+            </ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label color="orange" stacked>Kleurweergave</ion-label>
+          <ion-select (ionChange)="saveSettings()" okText="Bevestig" cancelText="Annuleer"
+                      [(ngModel)]="settings.app_color">
+            <ion-option *ngFor="let color of colors" value="{{color.name}}">{{ color.name }}</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label color="orange">Automatisch dataset updaten</ion-label>
+          <ion-toggle (ionChange)="saveSettings()" color="orange"
+                      [(ngModel)]="settings.automatic_update"></ion-toggle>
+        </ion-item>
+        <ion-item>
+          <ion-label color="orange">Mobiele data gebruiken</ion-label>
+          <ion-toggle (ionChange)="saveSettings()" color="orange"
+                      [(ngModel)]="settings.mobileData"></ion-toggle>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header class="settingTitle">Dataset</ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <h2 color="orange">Geselecteerde dataset</h2>
+          <p>{{settings.selected_dataset}}</p>
+        </ion-item>
+        <ion-item>
+          <button class="allbuttons" (click)="checkWebstore('new')" ion-button block>Dataset selecteren</button>
+        </ion-item>
+        <ion-item>
+          <button class="allbuttons" (click)="checkWebstore('new')" ion-button block>Datasets beheren</button>
+        </ion-item>
+        <ion-item>
+          <button class="allbuttons" (click)="checkWebstore('updates')" ion-button block>Zoek naar dataset updates</button>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header class="settingTitle">Spraak</ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label color="orange" stacked>Voorkeur geslacht spraak</ion-label>
+          <ion-select (ionChange)="saveSettings()" okText="Bevestig" cancelText="Annuleer" [(ngModel)]="settings.speech_gender">
+            <ion-option value="male">Man</ion-option>
+            <ion-option value="female">Vrouw</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label color="orange" stacked>Snelheid uitspraak</ion-label>
+          <ion-select (ionChange)="saveSettings()" okText="Bevestig" cancelText="Annuleer" [(ngModel)]="settings.speech_rate">
+            <ion-option value="0.50">Langzaam</ion-option>
+            <ion-option value="0.75">Normaal</ion-option>
+            <ion-option value="1.00">Snel</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label color="orange" stacked>Toonhoogte uitspraak</ion-label>
+          <ion-select (ionChange)="saveSettings()" okText="Bevestig" cancelText="Annuleer" [(ngModel)]="settings.speech_pitch">
+            <ion-option value="0.50">Laag</ion-option>
+            <ion-option value="0.75">Normaal</ion-option>
+            <ion-option value="1.00">Hoog</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>

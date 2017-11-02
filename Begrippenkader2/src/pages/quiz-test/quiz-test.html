@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      {{list.name}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="background" padding>
+<h1>{{currentEntry.base_lang}}</h1>
+<ion-item>
+    <ion-label>Vertaling...</ion-label>
+    <ion-input type="text" [(ngModel)]="userEntry"></ion-input>
+</ion-item>
+
+<button ion-button (click)="submitInput()">
+  Verder
+</button>
+</ion-content>

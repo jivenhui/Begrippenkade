@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Taalset toevoegen
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list [virtualScroll]="availableDatasets" [approxItemHeight]="'150px'">
+    <button ion-item *virtualItem="let dataset" (click)="addDataset($event, dataset)">
+      <h2>{{dataset.name}}</h2>
+      <p>{{dataset.publisher}}</p>
+    </button>
+  </ion-list>
+</ion-content>

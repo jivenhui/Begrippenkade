@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Testresultaten: {{listInfo.name}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<div style="display: block">
+  <canvas baseChart
+          [data]="pieChartData"
+          [labels]="pieChartLabels"
+          [chartType]="pieChartType"
+          [colors]="pieChartColors"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)"></canvas>
+</div>
+
+<br>
+
+<button ion-button full color="marine" (click)="saveResults()">
+  Resultaten opslaan
+</button>
+<button ion-button full color="marine" (click)="saveWrongAnswersToList()">
+  Foutieve antwoorden als lijst opslaan
+</button>
+
+<br>
+
+<ion-list [virtualScroll]="userInputList ? list : []" [approxItemHeight]="'150px'">
+  <button ion-item *virtualItem="let userInput">
+    <h2 color="danger" *ngIf="userInput.expectedTranslation != userInput.receivedTranslation">{{userInput.listEntry}}</h2>
+    <h2 color="favorite" *ngIf="userInput.expectedTranslation == userInput.receivedTranslation">{{userInput.listEntry}}</h2>
+    <p>{{userInput.expectedTranslation}} - {{userInput.receivedTranslation}}</p>
+  </button>
+</ion-list>
+</ion-content>

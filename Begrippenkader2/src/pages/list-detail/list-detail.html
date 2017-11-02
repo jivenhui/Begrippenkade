@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      {{listInfo.name}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!-- let entry not accessible in different code block?-->
+  <ion-list [virtualScroll]="entries ? list : []" [approxItemHeight]="'150px'">
+    <ion-item-sliding #item *virtualItem="let entry">
+      <ion-item>
+        <h2>{{entry.base_lang}}</h2>
+        <p>{{entry.translation}}</p>
+      </ion-item>
+
+      <ion-item-options side="left">
+        <button ion-button color="danger" (click)="deleteListItem(entry.id)">
+          <ion-icon name="ios-trash-outline"></ion-icon>
+          Verwijderen
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

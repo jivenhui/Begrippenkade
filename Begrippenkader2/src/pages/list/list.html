@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Lijsten
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list [virtualScroll]="lists ? list : []" [approxItemHeight]="'150px'">
+    <button ion-item *virtualItem="let list" (click)="goToListDetailPage($event, list)">
+      <h2>{{list.name}}</h2>
+      <p>{{list.publisher}}</p>
+    </button>
+  </ion-list>
+</ion-content>

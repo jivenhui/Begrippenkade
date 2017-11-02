@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Details: {{ datasetInfo.name }}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="background" padding>
+<ion-grid>
+  <ion-row>
+    <ion-col width-25><strong>Naam: </strong></ion-col>
+    <ion-col width-45>{{ datasetInfo.name }}</ion-col>
+    <ion-col width-30></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col width-25><strong>Uitgever: </strong></ion-col>
+    <ion-col width-45>{{ datasetInfo.publisher }}</ion-col>
+    <ion-col width-30></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col width-25><strong>Versie: </strong></ion-col>
+    <ion-col width-45>{{ datasetInfo.version }}</ion-col>
+    <ion-col width-30></ion-col>
+  </ion-row>
+</ion-grid>
+<ion-card padding>
+  <h1><strong>Beschrijving:</strong></h1>
+  <p>{{ datasetInfo.description }}</p>
+</ion-card>
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <button ion-button full icon-only>
+        <ion-icon name="refresh"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button full icon-only (click)="deleteLanguageSet()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+  <ion-row *ngIf="isSelected === false">
+    <ion-col><button ion-button full (click)="setLanguageSetActive()">Op actief zetten</button></ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>

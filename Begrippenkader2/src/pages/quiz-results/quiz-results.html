@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Toetsresultaten
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list [virtualScroll]="quizResults" [approxItemHeight]="'150px'">
+    <ion-item *virtualItem="let result">
+      <h2>{{result.listName}}</h2>
+      <p>{{result.date}}</p>
+      <p *ngIf="result.percentageCorrect <= 19" color="danger">{{result.percentageCorrect}}%</p>
+      <p *ngIf="result.percentageCorrect >= 20 && result.percentageCorrect <= 39" color="orangegrade">{{result.percentageCorrect}}%</p>
+      <p *ngIf="result.percentageCorrect >= 40 && result.percentageCorrect <= 59" color="yellow">{{result.percentageCorrect}}%</p>
+      <p *ngIf="result.percentageCorrect >= 60 && result.percentageCorrect <= 79" color="lime">{{result.percentageCorrect}}%</p>
+      <p *ngIf="result.percentageCorrect >= 80" color="lime">{{result.percentageCorrect}}%</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

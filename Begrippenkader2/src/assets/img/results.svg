@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="2446 1542.096 146.904 146.904">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #d61919;
+      }
+
+      .cls-1, .cls-2 {
+        stroke: #000;
+        stroke-width: 8px;
+      }
+
+      .cls-2 {
+        fill: #7fd05c;
+      }
+    </style>
+  </defs>
+  <g id="Symbol_2_1" data-name="Symbol 2 – 1" transform="translate(2332 1134)">
+    <g id="group-14" transform="translate(-2312 -1476.904)">
+      <path id="ellipse-3" class="cls-1" d="M73.452,4A69.452,69.452,0,1,1,4,73.452,69.452,69.452,0,0,1,73.452,4Z" transform="translate(2426 1885)"/>
+      <path id="ellipse-2" class="cls-2" d="M72.771,73.335l67.841-6.793a39.248,39.248,0,0,1,.93,6.793A68.771,68.771,0,1,1,55.8,6.682c1.25-.322,4.1-.916,4.1-.916Z" transform="translate(2426.681 1884.437)"/>
+    </g>
+  </g>
+</svg>
